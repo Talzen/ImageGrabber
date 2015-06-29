@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+ 
+  "name": "TalTest",
+  "description": "This extension will analyze a page using GTmetrix",
+  "version": "1.0",
+ 
+  
+  "browser_action": {
+   "default_icon": "images/icon.png",
+   "default_title": "Grab Page Images"
+
+  },
+  
+  "background":{
+        "scripts": ["scripts/background.js"]
+    },
+  
+   "content_scripts": [{
+        "matches": ["http://*/*", "https://*/*"],
+        "js": ["scripts/jquery-1.11.2.min.js","scripts/content.js"]
+    }],
+  
+  "permissions": [
+     "bookmarks",
+     "storage",
+     "activeTab",
+     "notifications",
+     "https://ajax.googleapis.com/"
+   ]
+}
+
